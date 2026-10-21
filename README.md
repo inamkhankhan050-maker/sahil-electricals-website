@@ -16,7 +16,7 @@ A responsive, single-page website for Sahil Electricals — AC Installation & Se
 - `styles.css` — colors, layout, responsive styles and reduced-motion rules.
 - `script.js` — service-card rendering, encoded WhatsApp links, navigation and carousel behavior.
 - `assets/logo.svg`, `assets/favicon.svg` — reusable Sahil Electricals house-and-plug mark.
-- `assets/images/` — the three supplied Sahil Electricals banners, optimized as JPEGs.
+- `assets/images/` — the three supplied Sahil Electricals banners, plus lightweight department photographs used on the service cards.
 
 ## Update the site
 
@@ -31,6 +31,10 @@ Put the replacement files in `assets/images/`, then update the three `<img>` pat
 ### Logo and service artwork
 
 Edit `assets/logo.svg` to update the reusable logo and `assets/favicon.svg` for the browser icon. The service category icons are inline SVGs in `index.html`; the repeated service-card icon is in `script.js`.
+
+### Department photos
+
+The AC and home-appliance department images are crops from the supplied Sahil Electricals banners. The electrical department image is a locally stored, optimized crop from Pixabay's photo hosted on Pexels: [Electrician Fixing an Opened Switchboard](https://www.pexels.com/photo/electrician-fixing-an-opened-switchboard-257736/). Pexels marks the photo free to use; its [license](https://www.pexels.com/license/) allows downloading, editing and use without required attribution. Each service card uses its department's representative photo, with lazy loading below the fold.
 
 ### WhatsApp booking links
 
@@ -64,7 +68,7 @@ The site is static and can be hosted at no cost by enabling GitHub Pages for the
 
 ## Image sources and licensing
 
-All three homepage banners were supplied by the business in this conversation and are stored locally in `assets/images/`. The logo mark is a purpose-made SVG recreation based on the supplied banner branding. The site uses original inline SVG illustrations for service categories and cards; it does not bundle third-party service photographs. Google Fonts (DM Sans and Manrope) are requested from Google Fonts; system sans-serif fallbacks are provided if the font service is unavailable. No third-party photograph license is required for the local assets.
+All three homepage banners were supplied by the business in this conversation and are stored locally in `assets/images/`. The logo mark is a purpose-made SVG recreation based on the supplied banner branding. The electrical department photo is from Pexels/Pixabay under the free Pexels license; source and license links are listed above. The AC and appliance department photos are derived from the supplied business banners. Google Fonts (DM Sans and Manrope) are requested from Google Fonts; system sans-serif fallbacks are provided if the font service is unavailable.
 
 ## Business details
 

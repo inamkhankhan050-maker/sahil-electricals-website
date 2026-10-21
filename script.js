@@ -29,10 +29,25 @@
     ]
   };
   const icon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v9H4zM7 11h10M8 19l-2 2m10-2 2 2M9 16v1m6-1v1"/></svg>';
+  const departmentPhotos = {
+    ac: {
+      src: 'assets/images/ac-department.webp',
+      alt: 'AC technician inspecting an indoor air conditioner with tools nearby'
+    },
+    electrical: {
+      src: 'assets/images/electrical-department.webp',
+      alt: 'Electrician checking a residential electrical panel and wiring'
+    },
+    appliance: {
+      src: 'assets/images/appliance-department.webp',
+      alt: 'Home appliances including a refrigerator, washing machine, geyser and mixer'
+    }
+  };
   const renderServices = () => {
     document.querySelectorAll('[data-service-group]').forEach(group => {
       const entries = services[group.dataset.serviceGroup] || [];
-      group.innerHTML = entries.map(([name, description]) => `<article class="service-card"><div class="service-card-top"><span class="service-icon">${icon}</span><h3>${name}</h3></div><p>${description}</p><a class="button button-green" href="${whatsappUrl(`Hello Sahil Electricals, I would like to book ${name}. My location is: ____. My preferred visit time is: ____. Please confirm availability and pricing.`)}" target="_blank" rel="noopener"><svg class="button-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg>Book This Service</a></article>`).join('');
+      const photo = departmentPhotos[group.dataset.serviceGroup];
+      group.innerHTML = entries.map(([name, description]) => `<article class="service-card"><img class="service-photo" src="${photo.src}" alt="${photo.alt}" width="846" height="636" loading="lazy" decoding="async"><div class="service-card-content"><div class="service-card-top"><span class="service-icon">${icon}</span><h3>${name}</h3></div><p>${description}</p><a class="button button-green" href="${whatsappUrl(`Hello Sahil Electricals, I would like to book ${name}. My location is: ____. My preferred visit time is: ____. Please confirm availability and pricing.`)}" target="_blank" rel="noopener"><svg class="button-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg>Book This Service</a></div></article>`).join('');
     });
   };
   function whatsappUrl(message) { return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`; }
