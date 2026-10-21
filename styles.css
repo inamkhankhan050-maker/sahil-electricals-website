@@ -102,7 +102,7 @@
 .service-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
 .service-card{min-height:0;padding:0;overflow:hidden}
 .service-card:hover{transform:translateY(-2px)}
-.service-photo{width:100%;aspect-ratio:4/3;object-fit:cover;background:#eef5f4}
+.service-photo{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:#eef5f4}
 .service-card-content{display:flex;flex:1;flex-direction:column;padding:17px}
 .service-card-top{align-items:flex-start;gap:10px;margin-bottom:9px}
 .service-card-top .service-icon{width:34px;height:34px;flex:0 0 34px;border-radius:10px}
