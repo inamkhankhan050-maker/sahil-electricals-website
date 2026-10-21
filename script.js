@@ -41,6 +41,17 @@
   document.querySelectorAll('[data-whatsapp]').forEach(link => { link.href = whatsappUrl(enquiryMessage); link.target = '_blank'; link.rel = 'noopener'; });
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  const mobileActionBar = document.querySelector('.mobile-actions');
+  const heroSection = document.querySelector('.hero');
+  if ('IntersectionObserver' in window && mobileActionBar && heroSection) {
+    const heroObserver = new IntersectionObserver(([entry]) => {
+      const showQuickActions = window.matchMedia('(max-width: 560px)').matches && !entry.isIntersecting;
+      document.body.classList.toggle('show-mobile-actions', showQuickActions);
+      mobileActionBar.setAttribute('aria-hidden', String(!showQuickActions));
+    }, { threshold: 0 });
+    heroObserver.observe(heroSection);
+  }
+
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.getElementById('main-nav');
   menuButton.addEventListener('click', () => {
