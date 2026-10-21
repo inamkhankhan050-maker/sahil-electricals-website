@@ -1,6 +1,7 @@
 (() => {
   const phone = '919971602909';
   const baseMessage = 'Hello Sahil Electricals, I would like to book a service. Please contact me to confirm availability and pricing.';
+  const enquiryMessage = 'Hello, I would like to enquire about your services. Please share availability and pricing.';
   const services = {
     ac: [
       ['AC PCB Repair','Diagnosis and repair support for AC control board issues.'],
@@ -31,12 +32,13 @@
   const renderServices = () => {
     document.querySelectorAll('[data-service-group]').forEach(group => {
       const entries = services[group.dataset.serviceGroup] || [];
-      group.innerHTML = entries.map(([name, description]) => `<article class="service-card"><div class="service-card-top"><span class="service-icon">${icon}</span><h3>${name}</h3></div><p>${description}</p><a class="button button-green" href="${whatsappUrl(`Hello Sahil Electricals, I would like to book ${name}. My location is: ____. My preferred visit time is: ____. Please confirm availability and pricing.`)}" target="_blank" rel="noopener">Book This Service <span aria-hidden="true">↗</span></a></article>`).join('');
+      group.innerHTML = entries.map(([name, description]) => `<article class="service-card"><div class="service-card-top"><span class="service-icon">${icon}</span><h3>${name}</h3></div><p>${description}</p><a class="button button-green" href="${whatsappUrl(`Hello Sahil Electricals, I would like to book ${name}. My location is: ____. My preferred visit time is: ____. Please confirm availability and pricing.`)}" target="_blank" rel="noopener"><svg class="button-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg>Book This Service</a></article>`).join('');
     });
   };
   function whatsappUrl(message) { return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`; }
   renderServices();
   document.querySelectorAll('[data-booking]').forEach(link => { link.href = whatsappUrl(baseMessage); link.target = '_blank'; link.rel = 'noopener'; });
+  document.querySelectorAll('[data-whatsapp]').forEach(link => { link.href = whatsappUrl(enquiryMessage); link.target = '_blank'; link.rel = 'noopener'; });
   document.getElementById('year').textContent = new Date().getFullYear();
 
   const menuButton = document.querySelector('.menu-toggle');
