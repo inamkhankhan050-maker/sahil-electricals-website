@@ -14,12 +14,12 @@
       ['Window AC Uninstallation, Where Applicable','Window AC uninstallation support where the site and unit allow.','assets/images/ac-services/window-ac-uninstallation.jpg','Window air conditioner being handled during removal']
     ],
     electrical: [
-      ['Electrical Wiring and Repair','Household wiring inspection, repair and related work.'],
-      ['Switch and Socket Installation or Repair','Installation or repair of household switches and sockets.'],
-      ['Lights and Lighting Installation','Lighting fixture installation and repair support.'],
-      ['Fan Installation and Repair','Ceiling and household fan installation or repair.'],
-      ['Geyser Installation','Geyser installation support for your home.'],
-      ['General Household Electrical Repairs','Help with common household electrical repair needs.']
+      ['Electrical Wiring and Repair','Household wiring inspection, repair and related work.','assets/images/electrical-services/electrical-wiring-repair.jpg','Hands stripping and repairing household electrical wires'],
+      ['Switch and Socket Installation or Repair','Installation or repair of household switches and sockets.','assets/images/electrical-services/switch-socket-installation-repair.jpg','Steps for installing and repairing a wall switch and socket'],
+      ['Lights and Lighting Installation','Lighting fixture installation and repair support.','assets/images/electrical-services/lighting-installation.jpg','Technician installing a ceiling light fixture'],
+      ['Fan Installation and Repair','Ceiling and household fan installation or repair.','assets/images/electrical-services/fan-installation-repair.jpg','Technician repairing a ceiling fan'],
+      ['Geyser Installation','Geyser installation support for your home.','assets/images/electrical-services/geyser-installation.jpg','Technician installing a home water geyser'],
+      ['General Household Electrical Repairs','Help with common household electrical repair needs.','assets/images/electrical-services/household-electrical-repairs.jpg','Close-up of a household electrical switch connection being repaired']
     ],
     appliance: [
       ['Refrigerator and Fridge Repair','Repair support for refrigerators and fridges.'],
