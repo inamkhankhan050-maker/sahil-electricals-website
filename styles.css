@@ -307,3 +307,16 @@
   .category-card-copy>small{font-size:9px}
   .promo-actions .button{font-size:10px}
 }
+
+/* Compact, full-width service finder inspired by the supplied reference. */
+.service-search{padding:12px 0 14px;background:var(--navy-deep);border-bottom:3px solid var(--teal)}
+.service-search-inner{display:block}
+.service-search-inner>label,.search-hint{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;clip-path:inset(50%)}
+.service-search-form{width:100%;min-height:56px;border-radius:12px;box-shadow:none}
+.service-search-form button{background:#f3f6f5}
+.service-search-results{grid-column:auto}
+@media(max-width:560px){
+  .service-search{padding:11px 0 13px}
+  .service-search-form{min-height:52px;border-radius:10px}
+  .dot.is-active::before{width:21px;height:8px;border-radius:99px;background:var(--teal)}
+}
