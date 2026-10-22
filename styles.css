@@ -374,3 +374,10 @@
   .carousel-controls{height:26px}
   .carousel-arrow{width:38px;height:38px}
 }
+
+
+/* Trim excess blank space below the mobile brand and navigation. */
+@media(max-width:560px){
+  .header-inner{min-height:70px;padding-block:4px}
+  .nav-links>a{min-height:44px}
+}
