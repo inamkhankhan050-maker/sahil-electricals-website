@@ -52,6 +52,54 @@
   };
   function whatsappUrl(message) { return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`; }
   renderServices();
+
+  const searchForm = document.querySelector('.service-search-form');
+  const searchInput = document.getElementById('service-search-input');
+  const searchResults = document.getElementById('service-search-results');
+  const searchStatus = document.getElementById('service-search-status');
+  if (searchForm && searchInput && searchResults && searchStatus) {
+    const serviceEntries = Object.entries(services).flatMap(([group, entries]) => entries.map(([name, description]) => ({ group, name, description })));
+    const sectionForGroup = { ac: '#ac-services', electrical: '#electrical-services', appliance: '#appliance-repair' };
+    const drawSearchResults = () => {
+      const query = searchInput.value.trim().toLocaleLowerCase();
+      searchResults.replaceChildren();
+      searchResults.classList.remove('has-results');
+      if (!query) {
+        searchStatus.textContent = 'Search AC gas filling, wiring, fan installation, refrigerator repair and more.';
+        return;
+      }
+      const matches = serviceEntries.filter(item => `${item.name} ${item.description} ${item.group}`.toLocaleLowerCase().includes(query));
+      searchResults.classList.add('has-results');
+      if (!matches.length) {
+        const empty = document.createElement('p');
+        empty.className = 'service-result-empty';
+        empty.textContent = 'No matching service found. Try another search or contact us on WhatsApp.';
+        searchResults.append(empty);
+        searchStatus.textContent = 'No matching service found.';
+        return;
+      }
+      searchStatus.textContent = `${matches.length} matching service${matches.length === 1 ? '' : 's'}. Choose a service to view details or book on WhatsApp.`;
+      matches.slice(0, 8).forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'service-result';
+        const name = document.createElement('strong');
+        name.textContent = item.name;
+        const view = document.createElement('a');
+        view.href = sectionForGroup[item.group];
+        view.textContent = 'View service';
+        const book = document.createElement('a');
+        const message = `Hello Sahil Electricals, I would like to book ${item.name}. My location is: ____. My preferred visit time is: ____. Please confirm availability and pricing.`;
+        book.href = whatsappUrl(message);
+        book.target = '_blank';
+        book.rel = 'noopener';
+        book.textContent = 'Book on WhatsApp';
+        row.append(name, view, book);
+        searchResults.append(row);
+      });
+    };
+    searchForm.addEventListener('submit', event => { event.preventDefault(); drawSearchResults(); });
+    searchInput.addEventListener('input', drawSearchResults);
+  }
   document.querySelectorAll('[data-booking]').forEach(link => { link.href = whatsappUrl(baseMessage); link.target = '_blank'; link.rel = 'noopener'; });
   document.querySelectorAll('[data-whatsapp]').forEach(link => { link.href = whatsappUrl(enquiryMessage); link.target = '_blank'; link.rel = 'noopener'; });
   document.getElementById('year').textContent = new Date().getFullYear();
