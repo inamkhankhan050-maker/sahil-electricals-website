@@ -22,11 +22,12 @@
       ['General Household Electrical Repairs','Help with common household electrical repair needs.','assets/images/electrical-services/household-electrical-repairs.jpg','Close-up of a household electrical switch connection being repaired']
     ],
     appliance: [
-      ['Refrigerator and Fridge Repair','Repair support for refrigerators and fridges.'],
-      ['Washing Machine Repair','Troubleshooting and repair support for washing machines.'],
-      ['Mixer Repair','Repair support for household mixers.'],
-      ['Grinder Repair','Repair support for household grinders.'],
-      ['Other Home Appliance Repair and Electrical Services','Ask us about another home appliance or electrical service.']
+      ['Refrigerator and Fridge Repair','Repair support for refrigerators and fridges.','assets/images/appliance-services/refrigerator-fridge-repair.jpg','Technician repairing a refrigerator with the door open'],
+      ['Washing Machine Repair','Troubleshooting and repair support for washing machines.','assets/images/appliance-services/washing-machine-repair.jpg','Technician repairing a front-loading washing machine'],
+      ['Mixer Repair','Repair support for household mixers.','assets/images/appliance-services/mixer-repair.jpg','Household mixer and jars shown for mixer repair'],
+      ['Grinder Repair','Repair support for household grinders.','assets/images/appliance-services/grinder-repair.jpg','Angle grinder and replacement motor shown for grinder repair'],
+      ['Other Home Appliance Repair and Electrical Services','Ask us about another home appliance or electrical service.','assets/images/appliance-services/home-appliance-repair.jpg','Technician with a range of household appliances'],
+      ['Microwave Repair','Repair support for household microwave ovens.','assets/images/appliance-services/microwave-repair.jpg','Technician repairing the internal components of a microwave oven']
     ]
   };
   const icon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v9H4zM7 11h10M8 19l-2 2m10-2 2 2M9 16v1m6-1v1"/></svg>';
