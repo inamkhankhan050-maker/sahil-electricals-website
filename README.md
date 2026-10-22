@@ -4,9 +4,9 @@ A responsive, single-page website for Sahil Electricals — AC Installation & Se
 
 ## Features
 
-- Responsive navigation and a three-banner carousel with automatic rotation, controls, swipe support and reduced-motion handling.
+- Responsive navigation and an automatically sliding three-banner carousel with overlay arrows, dot navigation, swipe support, and reduced-motion handling.
 - Spacious white logo header with a separate dark teal navigation strip and responsive mobile menu.
-- Photo-led AC, electrical and appliance category cards, followed by an interactive search across all listed services.
+- A full-width interactive service search directly below navigation, followed by the hero carousel and photo-led AC, electrical and appliance category cards.
 - Service visit promotion and six concise business-benefit items using confirmed business information.
 - The first banner's visible “BOOK A SERVICE” artwork button has a transparent, accessible HTML link aligned over it. It opens WhatsApp directly with an English booking message.
 - WhatsApp booking links for each requested service include that service's name, plus location and preferred-visit-time prompts.
