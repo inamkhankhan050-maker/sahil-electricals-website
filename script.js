@@ -4,13 +4,14 @@
   const enquiryMessage = 'Hello, I would like to enquire about your services. Please share availability and pricing.';
   const services = {
     ac: [
-      ['AC PCB Repair','Diagnosis and repair support for AC control board issues.'],
-      ['Split AC Installation','Installation support for split air conditioning units.'],
-      ['Window AC Installation','Installation support for window air conditioning units.'],
-      ['AC Gas Filling','AC gas check and filling service, as required.'],
-      ['AC Cooling Problem Diagnosis and Repair','Troubleshooting and repair for AC cooling concerns.'],
-      ['AC Repair and Maintenance','General AC repair and maintenance support.'],
-      ['AC Uninstallation, Where Applicable','Uninstallation support where the site and unit allow.']
+      ['AC PCB Repair','Diagnosis and repair support for AC control board issues.','assets/images/ac-services/ac-pcb-repair.jpg','Air conditioner circuit board for AC PCB repair'],
+      ['Split AC Installation','Installation support for split air conditioning units.','assets/images/ac-services/split-ac-installation.jpg','Technician installing a wall-mounted split air conditioner'],
+      ['Window AC Installation','Installation support for window air conditioning units.','assets/images/ac-services/window-ac-installation.jpg','Window air conditioner being installed in a home'],
+      ['AC Gas Filling','AC gas check and filling service, as required.','assets/images/ac-services/ac-gas-filling.jpg','Technician checking pressure and filling refrigerant in an AC'],
+      ['AC Cooling Problem Diagnosis and Repair','Troubleshooting and repair for AC cooling concerns.','assets/images/ac-services/ac-cooling-diagnosis.jpg','Air conditioner cooling problem diagnosis and repair'],
+      ['AC Repair and Maintenance','General AC repair and maintenance support.','assets/images/ac-services/ac-repair-maintenance.jpg','Technician cleaning an air conditioner filter during maintenance'],
+      ['AC Uninstallation, Where Applicable','Uninstallation support where the site and unit allow.','assets/images/ac-services/ac-uninstallation.jpg','Technician working on an air conditioner during uninstallation'],
+      ['Window AC Uninstallation, Where Applicable','Window AC uninstallation support where the site and unit allow.','assets/images/ac-services/window-ac-uninstallation.jpg','Window air conditioner being handled during removal']
     ],
     electrical: [
       ['Electrical Wiring and Repair','Household wiring inspection, repair and related work.'],
@@ -47,7 +48,10 @@
     document.querySelectorAll('[data-service-group]').forEach(group => {
       const entries = services[group.dataset.serviceGroup] || [];
       const photo = departmentPhotos[group.dataset.serviceGroup];
-      group.innerHTML = entries.map(([name, description]) => `<article class="service-card"><img class="service-photo" src="${photo.src}" alt="${photo.alt}" width="846" height="636" loading="lazy" decoding="async"><div class="service-card-content"><div class="service-card-top"><span class="service-icon">${icon}</span><h3>${name}</h3></div><p>${description}</p><a class="button button-green" href="${whatsappUrl(`Hello Sahil Electricals, I would like to book ${name}. My location is: ____. My preferred visit time is: ____. Please confirm availability and pricing.`)}" target="_blank" rel="noopener"><svg class="button-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg>Book This Service</a></div></article>`).join('');
+      group.innerHTML = entries.map(([name, description, serviceImage, serviceAlt]) => {
+        const cardPhoto = { src: serviceImage || photo.src, alt: serviceAlt || photo.alt };
+        return `<article class="service-card"><img class="service-photo" src="${cardPhoto.src}" alt="${cardPhoto.alt}" width="480" height="320" loading="lazy" decoding="async"><div class="service-card-content"><div class="service-card-top"><span class="service-icon">${icon}</span><h3>${name}</h3></div><p>${description}</p><a class="button button-green" href="${whatsappUrl(`Hello Sahil Electricals, I would like to book ${name}. My location is: ____. My preferred visit time is: ____. Please confirm availability and pricing.`)}" target="_blank" rel="noopener"><svg class="button-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg>Book This Service</a></div></article>`;
+      }).join('');
     });
   };
   function whatsappUrl(message) { return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`; }
