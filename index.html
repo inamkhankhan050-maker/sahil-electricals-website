@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=reference-redesign-v1">
+  <link rel="stylesheet" href="styles.css?v=search-carousel-v2">
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -50,22 +50,36 @@
   </nav>
 
   <main id="home">
+    <section class="service-search" aria-labelledby="service-search-title">
+      <div class="wrap service-search-inner">
+        <label id="service-search-title" for="service-search-input">Find the service you need</label>
+        <form class="service-search-form" role="search">
+          <input id="service-search-input" type="search" placeholder="Search for a service..." autocomplete="off" aria-describedby="service-search-status">
+          <button type="submit" aria-label="Search services"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg></button>
+        </form>
+        <div id="service-search-results" class="service-search-results" aria-live="polite"></div>
+        <p id="service-search-status" class="search-hint">Search AC gas filling, wiring, fan installation, refrigerator repair and more.</p>
+      </div>
+    </section>
+
     <section class="hero wrap" aria-label="Featured services">
       <div class="carousel" aria-roledescription="carousel" aria-label="Sahil Electricals service banners">
-        <div class="slides">
-          <div class="slide is-active" aria-hidden="false">
-            <img src="assets/images/ac-electrical-services.jpg" alt="Sahil Electricals AC installation, repair and electrical services across Delhi">
-            <a class="banner-book-overlay" href="#" data-booking aria-label="Book a service on WhatsApp">Book a service</a>
+        <div class="carousel-viewport">
+          <div class="slides" aria-live="off">
+            <div class="slide is-active" aria-hidden="false">
+              <img src="assets/images/ac-electrical-services.jpg" alt="Sahil Electricals AC installation, repair and electrical services across Delhi">
+              <a class="banner-book-overlay" href="#" data-booking aria-label="Book a service on WhatsApp">Book a service</a>
+            </div>
+            <div class="slide" aria-hidden="true"><img src="assets/images/home-appliance-services.jpg" alt="Sahil Electricals home appliance repair and service banner"></div>
+            <div class="slide" aria-hidden="true"><img src="assets/images/free-visiting-promotion.jpg" alt="Sahil Electricals free visiting and 30-minute arrival target promotion"></div>
           </div>
-          <div class="slide" aria-hidden="true"><img src="assets/images/home-appliance-services.jpg" alt="Sahil Electricals home appliance repair and service banner"></div>
-          <div class="slide" aria-hidden="true"><img src="assets/images/free-visiting-promotion.jpg" alt="Sahil Electricals free visiting and 30-minute arrival target promotion"></div>
+          <button class="carousel-arrow carousel-arrow-prev" type="button" data-prev aria-label="Previous banner">‹</button>
+          <button class="carousel-arrow carousel-arrow-next" type="button" data-next aria-label="Next banner">›</button>
         </div>
         <div class="carousel-controls">
-          <button class="carousel-arrow" type="button" data-prev aria-label="Previous banner">‹</button>
           <div class="carousel-dots" role="group" aria-label="Choose a banner">
             <button type="button" class="dot is-active" aria-label="Show banner 1" aria-current="true"></button><button type="button" class="dot" aria-label="Show banner 2"></button><button type="button" class="dot" aria-label="Show banner 3"></button>
           </div>
-          <button class="carousel-arrow" type="button" data-next aria-label="Next banner">›</button>
         </div>
       </div>
     </section>
@@ -76,18 +90,6 @@
         <a class="category-card" href="#ac-services"><img src="assets/images/ac-department.webp" alt="Split air conditioner and service tools" width="846" height="636" loading="lazy"><span class="category-card-copy"><b>AC Installation &amp; Repair</b><small>Professional AC installation, repair, maintenance, gas filling and cooling diagnosis.</small><span class="card-arrow">Explore AC services <span aria-hidden="true">→</span></span></span></a>
         <a class="category-card" href="#electrical-services"><img src="assets/images/electrical-department.webp" alt="Electrical wiring, switches and household repair" width="846" height="636" loading="lazy"><span class="category-card-copy"><b>Electrical Services</b><small>Household wiring, switches, sockets, lights, fans, geysers and electrical repairs.</small><span class="card-arrow">Explore electrical services <span aria-hidden="true">→</span></span></span></a>
         <a class="category-card" href="#appliance-repair"><img src="assets/images/appliance-department.webp" alt="Home appliances including a refrigerator, washer and mixer" width="846" height="636" loading="lazy"><span class="category-card-copy"><b>Home Appliance Repair</b><small>Refrigerator, washing machine, mixer, grinder and other appliance repairs.</small><span class="card-arrow">Explore appliance services <span aria-hidden="true">→</span></span></span></a>
-      </div>
-    </section>
-
-    <section class="service-search" aria-labelledby="service-search-title">
-      <div class="wrap service-search-inner">
-        <label id="service-search-title" for="service-search-input">Find the service you need</label>
-        <form class="service-search-form" role="search">
-          <input id="service-search-input" type="search" placeholder="Search for a service..." autocomplete="off" aria-describedby="service-search-status">
-          <button type="submit" aria-label="Search services"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg></button>
-        </form>
-        <div id="service-search-results" class="service-search-results" aria-live="polite"></div>
-        <p id="service-search-status" class="search-hint">Search AC gas filling, wiring, fan installation, refrigerator repair and more.</p>
       </div>
     </section>
 
@@ -108,6 +110,6 @@
 
   <footer class="site-footer"><div class="wrap footer-main"><a class="brand footer-brand" href="#home"><img src="assets/logo.svg" width="48" height="48" alt=""><span><strong>Sahil Electricals</strong><small>AC Installation &amp; Services</small></span></a><p>Fast, Reliable AC &amp; Electrical Services Across Delhi.</p><div class="footer-links"><a href="#ac-services">AC Services</a><a href="#electrical-services">Electrical Services</a><a href="#appliance-repair">Appliance Repair</a><a href="#contact">Contact</a></div><div class="footer-contact"><a class="button-call" href="tel:+919971602909"><svg class="button-icon"><use href="#icon-phone"></use></svg>Call Now · +91 9971602909</a><a class="footer-whatsapp" data-whatsapp href="https://wa.me/919971602909" target="_blank" rel="noopener"><svg class="button-icon"><use href="#icon-whatsapp"></use></svg>WhatsApp Us</a></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> Sahil Electricals</span><span>Prices on request · Free visiting for every customer</span></div></footer>
   <div class="mobile-actions" aria-label="Quick contact"><a href="tel:+919971602909"><svg class="button-icon"><use href="#icon-phone"></use></svg>Call Now</a><a data-whatsapp href="https://wa.me/919971602909" target="_blank" rel="noopener"><svg class="button-icon"><use href="#icon-whatsapp"></use></svg>WhatsApp Us</a></div>
-  <script src="script.js?v=reference-redesign-v1" defer></script>
+  <script src="script.js?v=search-carousel-v2" defer></script>
 </body>
 </html>
