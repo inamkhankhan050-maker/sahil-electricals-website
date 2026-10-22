@@ -56,7 +56,7 @@
   .hero-under{padding:23px 22px 24px}
   .hero-under h1{font-size:clamp(27px,5vw,34px)}
   .hero-actions{max-width:510px}
-  .contact-grid{grid-template-columns:1fr 340px}
+  .contact-grid{grid-template-columns:minmax(0,1fr) minmax(240px,.9fr);gap:clamp(20px,4vw,36px)}
 }
 @media(max-width:560px){
   .announcement{height:auto;min-height:38px;padding:7px 10px;gap:6px;font-size:10.5px;line-height:1.25;text-align:center}
